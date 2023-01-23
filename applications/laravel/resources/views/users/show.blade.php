@@ -10,6 +10,12 @@
         <li>Email: {{$user->email}}</li>
         <li>Data de Cadastro: {{$user->created_at}}</li>
     </ul>
+
+    <form action="{{route('users.delete', $user->id)}}" method="POST">
+        @method('DELETE')
+        @csrf
+        <input type="submit" value="Excluir">
+    </form>
 @endsection
 
 
